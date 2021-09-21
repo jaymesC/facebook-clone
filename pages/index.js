@@ -15,7 +15,7 @@ export default function Home({ session }) {
 
       <main>
         <Sidebar />
-        {/* Feed */}
+        <Feed />
         {/* widget */}
       </main>
     </div>
