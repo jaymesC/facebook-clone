@@ -1,3 +1,4 @@
+import StoryCard from "./StoryCard";
 
 const stories = [
   {
@@ -31,12 +32,17 @@ const stories = [
 
 function Stories() {
     return (
-        <div className="flex justify-center space-x-3 mx-auto">
-            {stories.map(story => (
-                <StoryCard name={story.name} src={story.src} profile={story.profile}/>
-            ))}
-        </div>
-    )
+      <div className="flex justify-center space-x-3 mx-auto">
+        {stories.map((story) => (
+          <StoryCard
+            key={story.name}
+            name={story.name}
+            src={story.src}
+            profile={story.profile}
+          />
+        ))}
+      </div>
+    );
 }
 
 export default Stories;
