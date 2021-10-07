@@ -18,6 +18,10 @@ export default function Home({ session }) {
         <Sidebar />
         <Feed />
         {/* widget */}
+        <h3>test</h3>
+        <div style={{marginRight: '10rem'}}>
+          ttestingg
+        </div>
       </main>
     </div>
   );
