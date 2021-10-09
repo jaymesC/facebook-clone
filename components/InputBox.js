@@ -5,6 +5,7 @@ import { CameraIcon, VideoCameraIcon } from "@heroicons/react/solid";
 import { useRef, useState } from "react";
 import { db, storage } from "../firebase";
 import firebase from "firebase";
+import { getDownloadURL } from "@firebase/storage";
 
 function InputBox() {
   const [session] = useSession();
@@ -34,9 +35,14 @@ function InputBox() {
           removeImage();
 
           uploadTask.on("state_change", null, (error) =>
-            console.error(error, () => {
+            console.error(error), () => {
               // When the upload completes
-            })
+              storage.ref('posts').child(doc.id).getDownloadURL().then(url => {
+                db.collection('posts').doc(doc.id).set({
+                  postImage: url
+                }, {merge: true})
+              })
+            }
           );
         }
       });
