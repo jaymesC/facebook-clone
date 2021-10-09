@@ -30,7 +30,7 @@ function Posts({posts}) {
                 postImage={post.data().postImage}
                 />
                 })
-            )}
+            ))}
         </div>
     )
 }
