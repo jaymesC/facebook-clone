@@ -7,7 +7,7 @@ import Feed from "../components/Feed";
 import Widgets from "../components/Widgets";
 import { db } from "../firebase";
 
-export default function Home({ session }) {
+export default function Home({ session, posts }) {
   if (!session) return <Login />;
   return (
     <div>
@@ -18,7 +18,7 @@ export default function Home({ session }) {
 
       <main className="flex ">
         <Sidebar />
-        <Feed />
+        <Feed posts={posts}/>
         <Widgets />
 
       </main>
