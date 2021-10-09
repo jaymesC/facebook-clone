@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Login from "../components/Login";
 import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
+import Widgets from "../components/Widgets";
 
 export default function Home({ session }) {
   if (!session) return <Login />;
@@ -17,11 +18,8 @@ export default function Home({ session }) {
       <main className="flex ">
         <Sidebar />
         <Feed />
-        {/* widget */}
-        <h3>test</h3>
-        <div style={{marginRight: '10rem'}}>
-          ttestingg
-        </div>
+        <Widgets />
+
       </main>
     </div>
   );
